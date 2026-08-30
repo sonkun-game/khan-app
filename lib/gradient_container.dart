@@ -1,18 +1,18 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:basics/styled_text.dart';
+import 'package:my_first_project/dice_roller.dart';
 
 var startAlignment = Alignment.topLeft;
 var endAlignment = Alignment.bottomRight;
 
-class GradientContainer extends StateLessWidget {
-  GradientContainer({super.key, required this.colors});
+class GradientContainer extends StatelessWidget {
+  const GradientContainer({super.key, required this.colors});
 
   GradientContainer.purple({super.key})
-      : colors = const [
-          Color.deepPurple,
-          Color.indigo,
+      : colors = [
+          Colors.deepPurple,
+          Colors.indigo,
         ];
 
   final List<Color> colors;
