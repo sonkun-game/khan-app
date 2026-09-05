@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_project/answer_button.dart';
 import 'package:my_first_project/data/questions.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class QuestionScreen extends StatefulWidget {
    const QuestionScreen({super.key});
@@ -36,7 +37,11 @@ class _QuestionScreenState extends State<QuestionScreen> {
             children: [
               Text (
                 currentQuestion.text, 
-                style: const TextStyle(color: Colors.white, fontSize: 24),
+                style: GoogleFonts.lato(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 30),
