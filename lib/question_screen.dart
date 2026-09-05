@@ -4,12 +4,12 @@ import 'package:my_first_project/data/questions.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionScreen extends StatefulWidget {
-   const QuestionScreen({super.key});
+  const QuestionScreen({super.key});
 
-   @override
-   State<QuestionScreen> createState() {
-     return _QuestionScreenState();
-   }
+  @override
+  State<QuestionScreen> createState() {
+    return _QuestionScreenState();
+  }
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
@@ -23,20 +23,20 @@ class _QuestionScreenState extends State<QuestionScreen> {
     });
   }
 
-   @override
-   Widget build(BuildContext context) {
-     final currentQuestion = questions[currentQuestionIndex];
-     return const Scaffold(
-       body: SizedBox(
-         width: double.infinity,
-         child: Container (
+  @override
+  Widget build(BuildContext context) {
+    final currentQuestion = questions[currentQuestionIndex];
+    return Scaffold(
+      body: SizedBox(
+        width: double.infinity,
+        child: Container(
           margin: const EdgeInsets.all(40),
-          child: const Column(
-            mainaxisAlignment: MainAxisAlignment.center,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text (
-                currentQuestion.text, 
+              Text(
+                currentQuestion.text,
                 style: GoogleFonts.lato(
                   color: Colors.white,
                   fontSize: 24,
@@ -46,12 +46,15 @@ class _QuestionScreenState extends State<QuestionScreen> {
               ),
               SizedBox(height: 30),
               ...currentQuestion.getShuffledAnswers().map((answer) {
-                return AnswerButton(answerText: answer, onTap: () => answerQuestion(answer));
+                return AnswerButton(
+                  answerText: answer,
+                  onTap: () => answerQuestion(answer),
+                );
               }),
             ],
           ), // Column
-         )// Container
-       ),
-     );
-   }
- }
+        ), // Container
+      ),
+    );
+  }
+}

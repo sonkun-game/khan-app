@@ -18,10 +18,10 @@ class _QuizState extends State<Quiz> {
 
   @override
   void initState() {
-    activeScreen = const StartScreen(switchScreen);
+    activeScreen = StartScreen(switchScreen: switchScreen);
     super.initState();
   }
-  
+
   void switchScreen() {
     setState(() {
       activeScreen = const QuestionScreen();
@@ -47,6 +47,6 @@ class _QuizState extends State<Quiz> {
           child: activeScreen,
         ),
       ), // Scaffold
-    ),
+    );
   }
 }
